@@ -1,0 +1,21 @@
+<div id="restaurant-list-main" class="large-8 medium-8 columns">
+    <div class="callout panel">
+      <div class="row">
+        <h4>Reservation successfully created for: <strong>{{restaurant.name}}</strong></h4>
+        <div class="large-6 medium-12 small-12 columns" style="margin-bottom:15px;">
+          <label>Name: </label><span>{{ reservation.name }}</span>
+        </div>
+        <div class="large-6 medium-12 small-12 columns" style="margin-bottom:15px;">
+          <label>Phone Number: </label><span>{{ reservation.phone }}</span>
+        </div>
+        <div class="large-6 medium-12 small-12 columns" style="margin-bottom:15px;">
+          <label># of Guests: </label><span>{{ reservation.guests }}</span>
+        </div>
+        <div class="large-6 medium-12 small-12 columns" style="margin-bottom:15px;">
+          <label>Time: </label><span>{{reservation.time | date:'shortTime'}}</span>
+        </div>
+      </div>
+      <button class="reset" type="button" (click)="commandReturn()">Return to Restaurant List</button>
+    </div>
+</div>
+

@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="large-12 columns">
+    <div class="callout panel">
+      <p><strong>{{restaurant.name}}</strong><br *ngIf="restaurant.tagline">{{restaurant.tagline}}</p>
+      <div class="row">
+        <div class="large-3 medium-6 small-12 columns">
+          <p>Price: {{restaurant.showPrice }}</p>
+        </div>
+        <div class="large-3 medium-6 small-12 columns">
+          <p>Rating: {{restaurant.showRating }}</p>
+        </div>
+        <div class="large-6 medium-12 small-12 columns">
+          <p>Address: {{restaurant.address}}</p>
+        </div>
+      </div>
+      <p>Description: {{restaurant.description}} </p>
+      <div class="availableTimes" *ngIf="availableTimes.length === 0">
+        <button type="button" (click)="commandShowTimes()" class="button restaurantRow" style="color: white;">Show Times</button>
+      </div>
+      <available-times
+        [availableTimes]="availableTimes"
+        *ngIf="availableTimes.length > 0 && !selectedTime"
+        (selectTime)="onTimeSelect($event)"></available-times>
+      <reservation-form
+        [selectedTime]="selectedTime"
+        [restaurant]="restaurant"
+        *ngIf="selectedTime"></reservation-form>
+    </div>
+  </div>
+</div>

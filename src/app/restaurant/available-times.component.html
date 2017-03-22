@@ -1,0 +1,14 @@
+<form>
+  <fieldset>
+    <legend>Available Times</legend>
+
+    <div class="row">
+      <div
+        class="large-3 medium-4 small-6 columns availableTime"
+        *ngFor="let availableTime of availableTimes"
+        (click)="commandSelect(availableTime)">
+        {{availableTime  | date:'shortTime'}}
+      </div>
+    </div>
+  </fieldset>
+</form>
